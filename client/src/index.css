@@ -8,3 +8,78 @@ body {
   margin: 0;
   min-width: 320px;
 }
+
+
+/* Login branding entrance */
+@keyframes brand-enter {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating decoration */
+@keyframes brand-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-18px) rotate(5deg);
+  }
+}
+
+/* Background glow */
+@keyframes brand-glow {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.12);
+  }
+}
+
+.brand-enter {
+  animation: brand-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.brand-delay-1 {
+  animation-delay: 100ms;
+}
+
+.brand-delay-2 {
+  animation-delay: 200ms;
+}
+
+.brand-delay-3 {
+  animation-delay: 350ms;
+}
+
+.brand-delay-4 {
+  animation-delay: 500ms;
+}
+
+.brand-float {
+  animation: brand-float 9s ease-in-out infinite;
+}
+
+.brand-glow {
+  animation: brand-glow 8s ease-in-out infinite;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .brand-enter,
+  .brand-float,
+  .brand-glow {
+    animation: none;
+  }
+}
